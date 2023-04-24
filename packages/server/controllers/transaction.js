@@ -17,7 +17,7 @@ module.exports = {
     try {
       const { title, value } = req.body;
 
-      if (!title || value) {
+      if (!title || !value) {
         res.status(400);
         throw new Error('Preencha Todos os Campos');
       }
@@ -36,7 +36,7 @@ module.exports = {
         throw new Error('Algo deu Errado');
       }
     } catch (error) {
-      return next(err);
+      return next(error);
     }
   }),
 
@@ -111,7 +111,7 @@ module.exports = {
       );
       res.status(200).json(updatedTransaction);
     } catch (error) {
-      return next(err);
+      return next(error);
     }
   }),
 };

@@ -47,29 +47,31 @@ module.exports = {
       });
 
       if (user) {
-        res.status(201).json({ token: generateToken(user._id) });
+        res.status(201).json({ name, token: generateToken(user._id) });
       } else {
-        res.status(40);
+        res.status(400);
         throw new Error('Informações de Usuário Inválidas');
       }
     } catch (error) {
-      return next(err);
+      return next(error);
     }
   }),
   // Logar
   loginUser: asyncHandler(async (req, res, next) => {
     try {
       const { email, password } = req.body;
-      const user = User.findOne({ email: email });
+      const user = await User.findOne({ email: email });
 
       if (user && (await bcrypt.compare(password, user.password))) {
-        res.status(200).json({ token: generateToken(user._id) });
+        res
+          .status(200)
+          .json({ name: user.name, token: generateToken(user._id) });
       } else {
         res.status(400);
         throw new Error('Credenciais Inválidas');
       }
     } catch (error) {
-      return next(err);
+      return next(error);
     }
   }),
   // Get User

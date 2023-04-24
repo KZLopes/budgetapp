@@ -21,8 +21,8 @@ module.exports = {
         req.user = await User.findById(decoded.id).select('-password');
 
         next();
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.log(error);
         res.status(401);
         throw new Error('Nao Autorizado');
       }
