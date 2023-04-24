@@ -45,7 +45,7 @@ const deleteTransaction = async (id, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.put(API_URL + id, config);
+  const response = await axios.put(API_URL + id + '/delete', id, config);
 
   return response.data;
 };

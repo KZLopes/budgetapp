@@ -32,7 +32,6 @@ h1,
 h2,
 h3 {
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
 .container {
@@ -78,7 +77,6 @@ h3 {
 .heading {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 50px;
   padding: 0 20px;
 }
 
@@ -86,26 +84,57 @@ h3 {
   color: #828282;
 }
 
+.summary {
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
 .transactions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-flow: column;
 }
 
 .transaction {
   background-color: #f4f4f4;
-  margin: 10px 0;
+  margin: 0.5rem 0;
   padding: 20px 0 10px;
   position: relative;
+  border-left: 0.5rem solid red;
+  border-radius: 5px;
 }
 
-.transaction .close {
+.isIncome {
+  border-left: 0.5rem solid green;
+}
+
+.transaction .options {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  gap: 1px;
   position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
+  top: 0.5rem;
+  right: 0.8rem;
   border: none;
   background: none;
+}
+
+.options * {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .form,
@@ -162,7 +191,6 @@ h3 {
 
 .btn-block {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .btn:hover {

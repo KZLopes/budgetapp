@@ -86,7 +86,7 @@ const Register = () => {
             <input
               type='email'
               className='form-control'
-              name='password'
+              name='email'
               id='email'
               value={email}
               placeholder='EMAIL'
