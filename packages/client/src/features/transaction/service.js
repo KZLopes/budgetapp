@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://desapertoapi.onrender.com/transaction/';
+const API_URL = '/transaction/';
 
 // Create Transaction
 const createTransaction = async (transactionData, token) => {
