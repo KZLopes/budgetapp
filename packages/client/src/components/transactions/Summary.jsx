@@ -15,16 +15,25 @@ const Summary = ({ transactions }) => {
   });
 
   return (
-    <section className='summary'>
+    <div className='summarycontainer'>
       <h3>Resumo</h3>
-      <div>
-        <p>Saldo: R${balance}</p>
+      <div className='summary'>
+        <div className='balance'>
+          <p>Saldo:</p>
+          <p>R${balance}</p>
+        </div>
         <div className='details'>
-          <span>Recebido: R${income}</span>
-          <span>Gastos: R${expenses}</span>
+          <div>
+            <p>Recebido:</p>
+            <p className='income'>R${income}</p>
+          </div>
+          <div>
+            <p>Gastos:</p>
+            <p className='expenses'>R${expenses}</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

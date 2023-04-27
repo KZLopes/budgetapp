@@ -15,7 +15,7 @@ module.exports = {
   // Add Transaction
   setTransaction: asyncHandler(async (req, res, next) => {
     try {
-      const { title, value } = req.body;
+      const { title, value, date } = req.body;
 
       if (!title || !value) {
         res.status(400);
@@ -25,6 +25,7 @@ module.exports = {
       const transaction = await Transaction.create({
         title: title,
         value: value,
+        date: date,
         user: req.user.id,
         isIncome: value >= 0 ? true : false,
       });

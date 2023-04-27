@@ -34,7 +34,8 @@ h3 {
   font-weight: 600;
 }
 
-.container {
+.container,
+.summarycontainer {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -84,29 +85,67 @@ h3 {
   color: #828282;
 }
 
+.dashboard {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.summarycontainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .summary {
   display: flex;
   flex-flow: column;
-  width: 60%;
-  max-width: 960px;
-  margin: 0 auto;
+  justify-content: space-evenly;
+  flex: 1;
   padding: 0 20px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
   text-align: center;
   border: 1px solid black;
   border-radius: 5px;
 }
 
+.balance {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.balance p + p {
+  color: darkgoldenrod;
+}
+
 .details {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
+  align-items: center;
+  flex: 5;
+}
+
+.income {
+  color: green;
+}
+
+.expenses {
+  color: red;
 }
 
 .transactions {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  align-items: center;
 }
 
 .transaction {
+  width: 70%;
   background-color: #f4f4f4;
   margin: 0.5rem 0;
   padding: 20px 0 10px;
@@ -139,7 +178,7 @@ h3 {
 
 .form,
 .content {
-  width: 70%;
+  /* width: 70%; */
   margin: 0 auto;
 }
 

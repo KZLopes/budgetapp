@@ -40,11 +40,10 @@ const Dashboard = () => {
         <h1>Olá {user && user.name}</h1>
         <p>Painel</p>
       </section>
-      <TransactionForm />
-      <div className='heading'>
-        <p>Resumo</p>
+      <div className='dashboard'>
+        <TransactionForm />
+        <Summary transactions={transactions} />
       </div>
-      <Summary transactions={transactions} />
       <section className='content'>
         {transactions.length > 0 ? (
           <div className='transactions'>
