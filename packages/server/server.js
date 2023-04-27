@@ -19,10 +19,10 @@ app.use(express.json());
 app.use('/user', userRoutes);
 app.use('/transaction', transactionRoutes);
 
-//Serve Frontend
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// //Serve Frontend
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
 
 app.use(errorHandler);
 
