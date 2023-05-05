@@ -67,7 +67,6 @@ const Register = () => {
         <h1>
           <FaUser /> Cadastro
         </h1>
-        <p>Lorem ipsum dolor sit amet.</p>
       </section>
       <section className='form'>
         <form onSubmit={onSubmit}>

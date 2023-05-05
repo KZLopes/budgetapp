@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/user/';
+const API_URL = 'https://desapertoapi.onrender.com/user/';
 
 // Register User
 const register = async (userData) => {
