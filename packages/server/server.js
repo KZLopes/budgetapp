@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv').config({ path: './config/.env' });
 const connectBD = require('./config/db');
@@ -14,6 +15,9 @@ connectBD();
 // Body Parsing
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// CORS Config
+app.use(cors());
 
 // Routes
 app.use('/user', userRoutes);
